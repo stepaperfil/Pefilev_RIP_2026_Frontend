@@ -1,4 +1,4 @@
-import type { FC, FormEvent } from 'react'
+import type { FC, SubmitEvent } from 'react'
 import { Button, Form } from 'react-bootstrap'
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const PriceFilter: FC<Props> = ({ value, onChange, onSubmit }) => {
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = (event: SubmitEvent) => {
     event.preventDefault()
     onSubmit()
   }
