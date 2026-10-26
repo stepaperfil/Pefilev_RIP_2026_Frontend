@@ -1,0 +1,5 @@
+.tabbar a.disabled {
+    color: rgba(255,255,255,.25);
+    cursor: default;
+    pointer-events: none;
+}
