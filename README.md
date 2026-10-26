@@ -6,10 +6,7 @@
 **Группа:** ИУ5-55Б
 Перфильев Степан Михайлович
 
-## Репозитории проекта
-
-- **Фронтенд** (SPA на React) — этот репозиторий
-- **Бэкенд** (веб-сервис на Go) — [Perfilev_RIP_2026_Backend](https://github.com/stepaperfil/Perfilev_RIP_2026_Backend)
+Бэкенд проекта: [Perfilev_RIP_2026_Backend](https://github.com/stepaperfil/Perfilev_RIP_2026_Backend)
 
 ## О проекте
 
@@ -46,7 +43,6 @@
 
 | Ветка | Лабораторная |
 |---|---|
-| [`lab1-design-templating`](../../tree/lab1-design-templating) | Лаба 1 — дизайн в Figma |
 | [`lab5-react-spa`](../../tree/lab5-react-spa) | Лаба 5 — базовое SPA на React: лента и плитка на mock-данных |
 
 ## Автор
