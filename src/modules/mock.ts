@@ -1,14 +1,14 @@
 import type { LifeCycleStage } from './lifeCycleStagesApi'
 
-const MINIO = 'http://localhost:9000/tco-assets'
+const MOCK = '/mock'
 
 export const LIFE_CYCLE_STAGES_MOCK: LifeCycleStage[] = [
   {
     id: 1,
     title: 'Закупка станка ЧПУ DMU 50',
     description: 'Покупка нового фрезерного станка с ЧПУ для цеха №2, включая доставку и монтаж',
-    image_url: `${MINIO}/purchase-dmu50.jpg`,
-    video_url: `${MINIO}/purchase-dmu50.mp4`,
+    image_url: `${MOCK}/purchase-dmu50.jpg`,
+    video_url: `${MOCK}/purchase-dmu50.mp4`,
     price_per_unit: 11475400,
     stage_position: 1,
     likes_count: 24,
@@ -18,8 +18,8 @@ export const LIFE_CYCLE_STAGES_MOCK: LifeCycleStage[] = [
     id: 2,
     title: 'Ввод в эксплуатацию',
     description: 'Пусконаладочные работы, калибровка осей и обучение оператора станка',
-    image_url: `${MINIO}/commissioning.jpg`,
-    video_url: `${MINIO}/commissioning.mp4`,
+    image_url: `${MOCK}/commissioning.jpg`,
+    video_url: `${MOCK}/commissioning.mp4`,
     price_per_unit: 94860,
     stage_position: 2,
     likes_count: 9,
@@ -29,8 +29,8 @@ export const LIFE_CYCLE_STAGES_MOCK: LifeCycleStage[] = [
     id: 3,
     title: 'Плановое ТО №1',
     description: 'Регулярное техническое обслуживание по регламенту производителя',
-    image_url: `${MINIO}/maintenance-1.jpg`,
-    video_url: `${MINIO}/maintenance.mp4`,
+    image_url: `${MOCK}/maintenance-1.jpg`,
+    video_url: `${MOCK}/maintenance.mp4`,
     price_per_unit: 79050,
     stage_position: 3,
     likes_count: 15,
@@ -51,8 +51,8 @@ export const LIFE_CYCLE_STAGES_MOCK: LifeCycleStage[] = [
     id: 7,
     title: 'Модернизация ЧПУ',
     description: 'Ретрофит системы ЧПУ и приводов для продления срока службы станка',
-    image_url: `${MINIO}/retrofit.jpg`,
-    video_url: `${MINIO}/retrofit.mp4`,
+    image_url: `${MOCK}/retrofit.jpg`,
+    video_url: `${MOCK}/retrofit.mp4`,
     price_per_unit: 8000000,
     stage_position: 3,
     likes_count: 11,
@@ -73,8 +73,8 @@ export const LIFE_CYCLE_STAGES_MOCK: LifeCycleStage[] = [
     id: 10,
     title: 'Утилизация',
     description: 'Демонтаж и сдача станка на утилизацию по окончании срока службы',
-    image_url: `${MINIO}/disposal.jpg`,
-    video_url: `${MINIO}/disposal.mp4`,
+    image_url: `${MOCK}/disposal.jpg`,
+    video_url: `${MOCK}/disposal.mp4`,
     price_per_unit: 110000,
     stage_position: 4,
     likes_count: 3,

@@ -36,25 +36,14 @@ const toTile = (s: LifeCycleStage): LifeCycleStageTile => ({
   is_mine: 0,
 })
 
-async function request<T>(url: string): Promise<T | undefined> {
-  const response = await fetch(url, { signal: AbortSignal.timeout(3000) })
-  if (response.status === 404) {
-    return undefined
-  }
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}`)
-  }
-  return response.json() as Promise<T>
-}
-
-function getTilesFromMock(maxPricePerUnit?: number): LifeCycleStageTile[] {
+export async function getLifeCycleStages(maxPricePerUnit?: number): Promise<LifeCycleStageTile[]> {
   return [...LIFE_CYCLE_STAGES_MOCK]
     .sort(byPosition)
     .filter((s) => maxPricePerUnit === undefined || (s.price_per_unit ?? 0) <= maxPricePerUnit)
     .map(toTile)
 }
 
-function getFeedFromMock(id?: number, next = false): LifeCycleStage | undefined {
+export async function getLifeCycleStageFeed(id?: number, next = false): Promise<LifeCycleStage | undefined> {
   const stages = [...LIFE_CYCLE_STAGES_MOCK].sort(byPosition)
   if (id === undefined) {
     return stages[0]
@@ -64,25 +53,4 @@ function getFeedFromMock(id?: number, next = false): LifeCycleStage | undefined 
     return undefined
   }
   return next ? stages[index + 1] : stages[index]
-}
-
-export async function getLifeCycleStages(maxPricePerUnit?: number): Promise<LifeCycleStageTile[]> {
-  const query = maxPricePerUnit !== undefined ? `?max_price_per_unit=${maxPricePerUnit}` : ''
-  try {
-    return (await request<LifeCycleStageTile[]>(`/api/life_cycle_stages${query}`)) ?? []
-  } catch {
-    return getTilesFromMock(maxPricePerUnit)
-  }
-}
-
-export async function getLifeCycleStageFeed(id?: number, next = false): Promise<LifeCycleStage | undefined> {
-  const params = new URLSearchParams()
-  if (id !== undefined) params.set('id', String(id))
-  if (next) params.set('next', 'true')
-  const query = params.toString() ? `?${params}` : ''
-  try {
-    return await request<LifeCycleStage>(`/api/life_cycle_stages/feed${query}`)
-  } catch {
-    return getFeedFromMock(id, next)
-  }
 }

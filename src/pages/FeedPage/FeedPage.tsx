@@ -1,7 +1,7 @@
 import { useEffect, useState, type FC } from 'react'
 import { Button } from 'react-bootstrap'
 import { useNavigate, useParams } from 'react-router-dom'
-import { DEFAULT_VIDEO, getLifeCycleStageFeed, type LifeCycleStage } from '../../modules/lifeCycleStagesApi'
+import { DEFAULT_IMAGE, DEFAULT_VIDEO, getLifeCycleStageFeed, type LifeCycleStage } from '../../modules/lifeCycleStagesApi'
 import { formatPrice } from '../../modules/format'
 import { ROUTES } from '../../Routes'
 
@@ -33,6 +33,7 @@ const FeedStage: FC<Props> = ({ id }) => {
       <video
         className="feed-media"
         src={stage.video_url || DEFAULT_VIDEO}
+        poster={stage.image_url || DEFAULT_IMAGE}
         autoPlay
         muted
         loop
