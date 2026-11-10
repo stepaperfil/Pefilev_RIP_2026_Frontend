@@ -44,3 +44,4 @@
 | Ветка | Лабораторная |
 |---|---|
 | [`lab5-react-spa`](../../tree/lab5-react-spa) | Лаба 5 — базовое SPA на React: лента и плитка на mock-данных |
+| [`lab6-redux-axios`](../../tree/lab6-redux-axios) | Лаба 6 — интерфейс пользователя, Redux Toolkit и Axios |
