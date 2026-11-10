@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Provider } from 'react-redux'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/common.css'
@@ -7,10 +8,14 @@ import './styles/life_cycle_stages_style.css'
 import './styles/life_cycle_stage_style.css'
 import './styles/tabbar.css'
 import './styles/bootstrap_fix.css'
+import './styles/lab6.css'
 import { AppLayout } from './AppLayout'
 import { ROUTES } from './Routes'
 import TilesPage from './pages/TilesPage/TilesPage'
 import FeedPage from './pages/FeedPage/FeedPage'
+import LoginPage from './pages/LoginPage/LoginPage'
+import AddStagePage from './pages/AddStagePage/AddStagePage'
+import { store } from './store'
 
 const router = createBrowserRouter([
   {
@@ -21,12 +26,16 @@ const router = createBrowserRouter([
       { path: ROUTES.TILES, element: <TilesPage /> },
       { path: ROUTES.FEED, element: <FeedPage /> },
       { path: `${ROUTES.FEED}/:id`, element: <FeedPage /> },
+      { path: ROUTES.ADD, element: <AddStagePage /> },
+      { path: ROUTES.LOGIN, element: <LoginPage /> },
     ],
   },
 ])
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>,
 )

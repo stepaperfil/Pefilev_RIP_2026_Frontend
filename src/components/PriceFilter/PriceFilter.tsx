@@ -2,12 +2,13 @@ import type { FC, SubmitEvent } from 'react'
 import { Button, Form } from 'react-bootstrap'
 
 interface Props {
+  disabled?: boolean
   value: string
   onChange: (value: string) => void
   onSubmit: () => void
 }
 
-export const PriceFilter: FC<Props> = ({ value, onChange, onSubmit }) => {
+export const PriceFilter: FC<Props> = ({ value, onChange, onSubmit, disabled }) => {
   const handleSubmit = (event: SubmitEvent) => {
     event.preventDefault()
     onSubmit()
@@ -17,12 +18,14 @@ export const PriceFilter: FC<Props> = ({ value, onChange, onSubmit }) => {
     <Form className="filter" onSubmit={handleSubmit}>
       <Form.Control
         type="number"
+        min={0}
+        disabled={disabled}
         name="maxPricePerUnit"
         placeholder="Цена за единицу, ₽"
         value={value}
         onChange={(event) => onChange(event.target.value)}
       />
-      <Button type="submit" className="btn-icon" aria-label="Применить фильтр">
+      <Button type="submit" disabled={disabled} className="btn-icon" aria-label="Применить фильтр">
         ›
       </Button>
     </Form>

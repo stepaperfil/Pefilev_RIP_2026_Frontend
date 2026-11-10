@@ -1,0 +1,169 @@
+.app {
+    position: relative;
+}
+
+.tco-form-page > form,
+.tco-form-page > .alert {
+    margin: 0 16px 16px;
+}
+
+.tco-form-page .btn,
+.btn.tile-delete {
+    --bs-btn-hover-bg: var(--color-accent);
+    --bs-btn-hover-color: var(--color-panel);
+    --bs-btn-hover-border-color: var(--color-accent);
+    --bs-btn-active-bg: var(--color-accent);
+    --bs-btn-active-color: var(--color-panel);
+    --bs-btn-active-border-color: var(--color-accent);
+    --bs-btn-disabled-bg: var(--color-accent);
+    --bs-btn-disabled-color: var(--color-panel);
+    --bs-btn-disabled-border-color: var(--color-accent);
+    --bs-btn-focus-shadow-rgb: 186, 255, 66;
+}
+
+.tco-form-page h3 {
+    margin: 0 0 16px;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.tco-form-page .form-label {
+    margin-bottom: 6px;
+    color: rgba(255,255,255,.65);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tco-form-page .form-control {
+    min-height: 52px;
+    padding: 12px 16px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 16px;
+    background: var(--color-panel);
+    color: var(--color-text);
+    font: inherit;
+    font-size: 13px;
+}
+
+.tco-form-page .form-control:focus {
+    border-color: var(--color-accent);
+    box-shadow: none;
+}
+
+.tco-form-page input[type="file"] {
+    padding-block: 8px;
+}
+
+.tco-form-page input[type="file"]::file-selector-button {
+    margin: 0 10px 0 -8px;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 10px;
+    color: var(--color-panel);
+    background: var(--color-accent);
+    font-weight: 800;
+}
+
+.draft-media {
+    display: block;
+    width: 100%;
+    max-height: 240px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    border-radius: 16px;
+    background: var(--color-surface);
+}
+
+.tco-loading {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: grid;
+    place-items: center;
+    background: rgba(6,7,33,.55);
+    color: var(--color-accent);
+}
+
+.tile-delete {
+    width: calc(100% - 16px);
+    margin: 0 8px 8px;
+}
+
+.feed-likes-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.feed-likes-button:disabled {
+    cursor: default;
+}
+
+.feed-likes-button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.feed-likes-button[aria-pressed="false"] .feed-likes-icon {
+    filter: grayscale(1);
+}
+
+.tabbar button.nav-link {
+    color: rgba(255,255,255,.55);
+    font-size: 13px;
+    font-weight: 700;
+    padding-bottom: 4px;
+}
+
+.feed-notice {
+    padding: 16px;
+}
+
+.draft-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 16px;
+}
+
+.draft-heading h2 {
+    font-size: 18px;
+}
+
+.draft-status {
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: var(--color-surface);
+    color: rgba(255,255,255,.65);
+    font-size: 12px;
+}
+
+.tco-form-page .draft-section-title {
+    color: rgba(255,255,255,.65);
+    margin: 0 0 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.draft-title {
+    margin-bottom: 16px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.draft-params {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.tco-form-page .form-control::placeholder {
+    color: rgba(255,255,255,.55);
+}

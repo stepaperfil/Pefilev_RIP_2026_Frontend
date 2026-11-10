@@ -28,12 +28,6 @@
 .feed-likes-icon { font-size: 18px; line-height: 1; }
 .feed-likes-count { font-size: 13px; font-weight: 700; }
 
-.feed-likes-static {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-}
 
 .feed-description-toggle-input { display: none; }
 .feed-description-text {
